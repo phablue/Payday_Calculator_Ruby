@@ -1,0 +1,44 @@
+{
+  "public_holidays": [
+    {
+      "date": "2013/1/1",
+      "name": "New Years Day"
+    },
+    {
+      "date": "2013/1/21",
+      "name": "Luther King Day"
+    },
+    {
+      "date": "2013/5/27",
+      "name": "Memorial Day"
+    },
+    {
+      "date": "2013/7/4",
+      "name": "Independence Day"
+    },
+    {
+      "date": "2013/9/2",
+      "name": "Labor Day"
+    },
+    {
+      "date": "2013/10/4",
+      "name": "Columbus Day"
+    },
+    {
+      "date": "2013/11/11",
+      "name": "Veterans Day"
+    },
+    {
+      "date": "2013/11/28",
+      "name": "Thanksgiving Day"
+    },
+    {
+      "date": "2013/11/29",
+      "name": "Black Friday"
+    },
+    {
+      "date": "2013/12/25",
+      "name": "Christmas"
+    }
+  ]
+}

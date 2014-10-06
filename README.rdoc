@@ -1,0 +1,46 @@
+Payroll Scheduler
+=================
+For calculating paydays.
+
+
++ SETUP
+
+  This program is written with Ruby 2.1.2 in mind.
+
+  1. Install ‘payroll_scheduler’ Gem
+
+   `$ gem install --local payroll_scheduler-0.1.0.gem`
+
+  2. Depending on your machine and environment, you may need to do one of the following:
+    i. Reload your shell
+      ex. `source ~/.bashrc`
+    ii. For rbenv users, you may need to `rbenv rehash`
+
+
++ EXECUTE
+
+  1. To get the payroll schedule for 2014, with the payment day on the 30th of each month :
+
+    `$ payroll_scheduler --year 2014 --day 30`
+
+
+  2. To get the payroll schedule for 2015 on a bi-weekly schedule starting on the 5th of January 2015 :
+
+    `$ payroll_scheduler --pay_frequency "2 week" --starting "5/1/2015"`
+
+  3. You may also pass in an optional path to a .json file of public holidays. For example :
+
+     `$ payroll_scheduler --year 2014 --day 30 --public_holidays "./public_holidays.json"
+
+     OR
+
+     `$ payroll_scheduler --pay_frequency "2 week" --starting "15/10/2014" --public_holidays "./path/to/other_holidays.json"
+
+
++ TESTING
+
+  If you do not have it installed already, you will need the `rspec` gem. It has been included in the Gemfile and can be installed with `bundle install`. You may need to `gem install bundler`.
+
+  To run the tests, go the project root directory and enter :
+
+    `$ rspec`

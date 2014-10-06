@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+lib = File.expand_path("../../lib/", __FILE__)
+$:.unshift lib unless $:.include?(lib)
+
+require "optparse"
+require "payroll_scheduler"
+
+options = {}
+
+opt_parser = OptionParser.new do |opt|
+  opt.on("--year YEAR") do |y|
+    options[:year] = y
+  end
+  opt.on("--day DAY") do |d|
+    options[:day] = d
+  end
+  opt.on("--pay_frequency FREQUENCY") do |f|
+    options[:pay_frequency] = f
+  end
+  opt.on("--starting STARTING") do |s|
+    options[:starting_date] = s
+  end
+  opt.on("--public_holidays HOLIDAYS") do |h|
+    options[:public_holidays_path] = h
+  end
+end
+
+opt_parser.parse!
+
+output = PayrollScheduler::Presenter.new
+calculator = PayrollScheduler::Calculator.new(output, options)
+
+calculator.create_schedule
